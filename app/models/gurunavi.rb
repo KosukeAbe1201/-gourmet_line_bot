@@ -8,6 +8,7 @@ SEARCH_RANGE = 2
       "latitude" =>      lat,
       "longitude" =>      lon,
       "range" =>      SEARCH_RANGE,
+      "hit_per_page" => 50
     }
     BASE_API_URL + "?" + hash.map{|k,v| URI.encode(k.to_s) + "=" + URI.encode(v.to_s)}.join("&")
   end
