@@ -40,7 +40,7 @@ class WebhookController < ApplicationController
                 aspectMode: "cover",
                 action: {
                   type: "uri",
-                  uri: "http://linecorp.com/"
+                  uri: return_unknown_if_blank(rest["url_mobile"])
                 }
               },
               body: {
