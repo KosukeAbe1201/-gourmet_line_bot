@@ -2,18 +2,13 @@ require 'rails_helper'
 require 'webmock'
 include WebMock::API
 
+WebMock.allow_net_connect!
+
 RSpec.describe Gurunavi, type: :model do
   before do
     WebMock.enable!
-    WebMock.stub_request(:get, "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=12345678&latitude=35.5139807&longitude=139.6808441&range=2").
-         with(
-           headers: {
-       	  'Accept'=>'*/*',
-       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-       	  'Host'=>'api.gnavi.co.jp',
-       	  'User-Agent'=>'Ruby'
-           }).
-         to_return(status: 200, body: File.read("#{Rails.root}/spec/json/stub_api_response.json", headers: { 'Content-Type' =>  'application/json' }
+    WebMock.stub_request(:get, "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=12345678&latitude=35.5139807&longitude=139.6808441&range=2")
+    .to_return(status: 200, body: File.read("#{Rails.root}/spec/json/stub_api_response.json", headers: { 'Content-Type' =>  'application/json' }
          )
        )
   end
