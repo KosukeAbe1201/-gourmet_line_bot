@@ -35,7 +35,7 @@ class WebhookController < ApplicationController
                   type: "bubble",
                   hero: {
                     type: "image",
-                    url: rest["image_url"]["shop_image1"] == "" ? "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png" : rest["image_url"]["image_url"],
+                    url: rest["image_url"]["shop_image1"] == "" ? "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png" : rest["image_url"]["shop_image1"],
                     size: "full",
                     aspectRatio: "20:13",
                     aspectMode: "cover",
