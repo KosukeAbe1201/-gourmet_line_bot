@@ -55,7 +55,7 @@ class WebhookController < ApplicationController
                         contents: [
                           {
                             type: "text",
-                            text: "住所",
+                            text: "PLACE",
                             color: "#aaaaaa",
                             size: "sm",
                             flex: 1
@@ -77,7 +77,7 @@ class WebhookController < ApplicationController
                         contents: [
                           {
                             type: "text",
-                            text: "営業時間",
+                            text: "TIME",
                             color: "#aaaaaa",
                             size: "sm",
                             flex: 1
@@ -99,7 +99,7 @@ class WebhookController < ApplicationController
                         contents: [
                           {
                             type: "text",
-                            text: "電話番号",
+                            text: "TEL",
                             color: "#aaaaaa",
                             size: "sm",
                             flex: 1
@@ -144,7 +144,7 @@ class WebhookController < ApplicationController
           },
           {
             type: 'text',
-            text: "このお店に行こうよ！"
+            text: "このお店、どうかな？"
           }
           ]
             client.reply_message(event['replyToken'], messages)
