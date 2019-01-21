@@ -21,7 +21,7 @@ class WebhookController < ApplicationController
         when Line::Bot::Event::MessageType::Text
           message = {
             type: 'text',
-            text: Line::return_ramdom_message
+            text: "今どこいるの？位置情報ちょうだい！"
           }
           client.reply_message(event['replyToken'], message)
         when Line::Bot::Event::MessageType::Location
